@@ -43,9 +43,12 @@
   "name": "@mattwyskiel/bootstrap-microservice",
   "author": "Matthew Wyskiel",
   "module": "dist/bootstrap-microservice.esm.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattwyskiel/bootstrap-microservice.git"
+  },
   "devDependencies": {
     "@size-limit/preset-small-lib": "^7.0.8",
-    "@types/aws-lambda": "^8.10.101",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "16",
     "husky": "^8.0.1",
@@ -55,12 +58,8 @@
     "typescript": "^4.7.4"
   },
   "dependencies": {
-    "@middy/core": "^3.1.0",
-    "aws-lambda": "^1.0.7",
     "commander": "^9.3.0",
     "fs-extra": "^10.1.0",
-    "json-schema-to-ts": "^2.5.3",
-    "logform": "^2.4.1",
-    "winston": "^3.8.0"
+    "logform": "^2.4.1"
   }
 }
