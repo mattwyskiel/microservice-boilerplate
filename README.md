@@ -19,21 +19,37 @@ yarn add --dev @mattwyskiel/bootstrap-microservice
 ## Usage
 
 ```
-npx bootstrap-microservice [options] / yarn bootstrap-microservice [options]
+npx bootstrap-microservice [options] [command] / yarn bootstrap-microservice [options] [command]
+
+CLI to add opinionated common boilerplate to SST-generated TypeScript microservices
 
 Options:
-  -V, --version             output the version number
-  -d, --dir <directory>     directory to output folder "lib/" of boilerplate code files in (relative to
-                            current working directory) (default: "./")
+  -V, --version          output the version number
+  -h, --help             display help for command
+
+Commands:
+  boilerplate [options]
+  codeformat [options]
+  help [command]         display help for command
+```
+
+## Commands
+
+### `boilerplate`
+
+```
+bootstrap-microservice boilerplate [options]
+
+Options:
+  -d, --dir <directory>     directory to output folder "lib/" of boilerplate code files in (relative to current working
+                            directory) (default: "./")
   -p --project <directory>  root project directory which contains package.json file (default: "./")
   -h, --help                display help for command
 ```
 
-## Functionality
-
 This tool adds the following functionality to the `libs/` directory
 
-### Logger
+#### Logger
 
 This library exposes a pre-configured [`winston`](https://github.com/winstonjs/winston) logger with
 the following settings:
@@ -75,7 +91,7 @@ INFO - Request Body
 }
 ```
 
-#### Usage
+##### Usage
 
 ```typescript
 import { logger } from '@mattwyskiel/microservice-boilerplate';
@@ -83,7 +99,7 @@ import { logger } from '@mattwyskiel/microservice-boilerplate';
 logger.info('This is a log!');
 ```
 
-## Request Monitoring
+#### Request Monitoring
 
 This library implements a [`middy`](https://github.com/middyjs/middy) middleware that does the
 following:
@@ -92,7 +108,7 @@ following:
 2. If the code is deployed, logs the API Gateway proxy requests and responses.
 3. Intercepts all errors and normalizes them for consistent
 
-#### Usage
+##### Usage
 
 ```typescript
 import { requestMonitoring } from '@mattwyskiel/microservice-boilerplate';
@@ -103,7 +119,7 @@ import middy from '@middy/core';
 export default middy(handler).use(requestMonitoring());
 ```
 
-### Amazon API Gateway Helper Types
+#### Amazon API Gateway Helper Types
 
 This library defines some helper types that enable a strongly-typed API Gateway request body.
 
@@ -133,3 +149,16 @@ export const handler: APIGatewayProxyHandlerV2 = event => {
   });
 };
 ```
+
+### `codeformat`
+
+```
+Usage: bootstrap-microservice codeformat [options]
+
+Options:
+  -p --project <directory>  root project directory which contains package.json file (default: "./")
+  -h, --help                display help for command
+```
+
+This tool installs `eslint` and `prettier` and provides default configs for both, for use in
+TypeScript projects.

@@ -1,17 +1,17 @@
 {
   "name": "basic",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Matthew Wyskiel",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
-    "@mattwyskiel/bootstrap-microservice": "file:./../../",
     "@types/aws-lambda": "^8.10.101",
+    "@typescript-eslint/eslint-plugin": "^5.30.4",
+    "@typescript-eslint/parser": "^5.30.4",
+    "eslint": "^8.19.0",
     "json-schema-to-ts": "^2.5.4",
+    "prettier": "^2.7.1",
+    "prettier-airbnb-config": "^1.0.0",
     "typescript": "^4.7.4"
   },
   "dependencies": {
