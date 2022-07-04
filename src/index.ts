@@ -4,7 +4,7 @@ import { join } from 'path';
 import { runCLICommand } from './run-cli-command';
 
 program
-  .name('microservice-bootstrapper')
+  .name('bootstrap-microservice')
   .description(
     'CLI to add opinionated common boilerplate to SST-generated TypeScript microservices'
   )

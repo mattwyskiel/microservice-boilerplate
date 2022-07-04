@@ -7,19 +7,19 @@ A few simple utils that are generally used by all my AWS-based Microservices.
 ### NPM
 
 ```
-npm install --save-dev @mattwyskiel/microservice-boilerplate
+npm install --save-dev @mattwyskiel/bootstrap-microservice
 ```
 
 ### Yarn
 
 ```
-yarn add --dev @mattwyskiel/microservice-boilerplate
+yarn add --dev @mattwyskiel/bootstrap-microservice
 ```
 
 ## Usage
 
 ```
-npx microservice-bootstrapper [options] / yarn microservice-bootstrapper [options]
+npx bootstrap-microservice [options] / yarn bootstrap-microservice [options]
 
 Options:
   -V, --version             output the version number
