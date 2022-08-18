@@ -1,6 +1,6 @@
 import { program } from 'commander';
 import { copySync } from 'fs-extra';
-import { copyFile, writeFile } from 'fs/promises';
+import { copyFile } from 'fs/promises';
 import { join } from 'path';
 import { runCLICommand } from './run-cli-command';
 
@@ -56,15 +56,20 @@ program
       options.project,
       'yarn',
       'add',
+      '-W',
       '--dev',
       'eslint',
       '@typescript-eslint/eslint-plugin',
       '@typescript-eslint/parser',
+      'eslint-config-prettier',
       'prettier',
       'prettier-airbnb-config'
     );
 
-    await writeFile(join(options.project, '.prettierrc'), '"prettier-airbnb-config"');
+    await copyFile(
+      join(__dirname, '..', 'resources', '.prettierrc.js'),
+      join(process.cwd(), options.project, '.prettierrc.js')
+    );
     await copyFile(
       join(__dirname, '..', 'resources', '.eslintrc.js'),
       join(process.cwd(), options.project, '.eslintrc.js')
