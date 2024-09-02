@@ -1,3 +1,5 @@
+> This repository is no longer actively used by me, but it serves as a peek into my development workflow around 2021/2022, when I was just starting to build my [Whiskey platform](https://github.com/whiskey-platform). My goal was to make my life easier as I was starting to build microservices for all kinds of use cases, and I wanted consistency. Take a look below and see what you think!
+
 # Microservice Bootstrapper
 
 A few simple utils that are generally used by all my AWS-based Microservices.
